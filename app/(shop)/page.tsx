@@ -224,7 +224,7 @@ export default function Home() {
           focus:outline-none 
           flex items-center justify-center 
           cursor-pointer 
-          transition-colors peer relative"  type="checkbox" name='livrare' value="" id="" required/>
+          transition-colors peer relative"  type="checkbox" name='date' value="" id="date" required/>
                 <svg
                   className="w-8 h-8 text-[#313440] pointer-events-none absolute opacity-0 peer-checked:opacity-100"
                   fill="none"
@@ -239,7 +239,7 @@ export default function Home() {
                   />
                 </svg>
 
-                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='livrare'> Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </label>
+                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </label>
               </div>
               <p className='text-[12px] text-[#313440] flex gap-1 items-center mt-2'><CiLock className='text-[18px]' />Ваши данные защищены и не передаются третьим лицам</p>
               <button className='bg-[#4F6B4F] text-white w-full py-2.5 px-3.75 rounded-lg font-semibold tect-[20px] mt-3' >Свяжитесь со мной</button>
