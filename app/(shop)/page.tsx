@@ -30,9 +30,6 @@ import Slide2 from '@/public/slider/2.webp'
 import Slide3 from '@/public/slider/3.webp'
 
 
-
-
-
 export default function Home() {
   return (
     <div className="">
