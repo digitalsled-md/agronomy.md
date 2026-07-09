@@ -5,17 +5,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { IoIosArrowForward } from "react-icons/io";
-import { CiUser } from "react-icons/ci";
+import { FaRegUser } from "react-icons/fa";
 
 import { Autoplay, Pagination } from 'swiper/modules';
 
-import { GoShieldCheck } from "react-icons/go";
+import { LuShieldCheck } from "react-icons/lu";
 import { TbTruckDelivery } from "react-icons/tb";
-import { BsLeaf } from "react-icons/bs";
-import { GiHeadphones } from "react-icons/gi";
+import { LuLeaf } from "react-icons/lu";
+import { FaHeadphonesSimple } from "react-icons/fa6";
 import { MdStorefront } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
+
+import { ImCheckmark } from "react-icons/im";
 
 import Image from 'next/image'
 
@@ -28,9 +30,24 @@ import Trava from '@/public/trava.webp'
 import Slide1 from '@/public/slider/1.webp'
 import Slide2 from '@/public/slider/2.webp'
 import Slide3 from '@/public/slider/3.webp'
+import { SetStateAction, useState } from 'react';
 
 
 export default function Home() {
+  const [cestion, setCestion] = useState<number | null>(null)
+  // const [isOpen, setIsOpen] = useState(false)
+
+  const faqData = [
+    { id: 1, q: "Как оформить заказ?", a: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sapiente aut eveniet delectus quas consequuntur error enim ipsum quidem cupiditate facere consequatur aspernatur, facilis officia, tenetur at repellat nostrum corrupti!" },
+    { id: 2, q: "Какие способы оплаты доступы?", a: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sapiente aut eveniet delectus quas consequuntur error enim ipsum quidem cupiditate facere consequatur aspernatur, facilis officia, tenetur at repellat nostrum corrupti!" },
+    { id: 3, q: "Как осуществляется доставка?", a: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sapiente aut eveniet delectus quas consequuntur error enim ipsum quidem cupiditate facere consequatur aspernatur, facilis officia, tenetur at repellat nostrum corrupti!" },
+    { id: 4, q: "Сколько времени занимает доставка?", a: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sapiente aut eveniet delectus quas consequuntur error enim ipsum quidem cupiditate facere consequatur aspernatur, facilis officia, tenetur at repellat nostrum corrupti!" },
+    { id: 5, q: "Можно ли вернуть товар?", a: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sapiente aut eveniet delectus quas consequuntur error enim ipsum quidem cupiditate facere consequatur aspernatur, facilis officia, tenetur at repellat nostrum corrupti!" }
+  ]
+
+  const handleToggle = (id: number) => {
+    setCestion(cestion === id ? null : id);
+  };
   return (
     <div className="">
       <main >
@@ -52,14 +69,14 @@ export default function Home() {
             className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:!h-[42.6] [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!w-1.75 [&_.swiper-pagination-bullet]:!rounded-[8px] [&_.swiper-pagination-bullet]:!bg-[#FFFFFF]/50 [&_.swiper-pagination-bullet-active]:!bg-white w-full"
 
           >
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide1} alt='' className='w-full h-full object-cover'/></SwiperSlide>
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover'/></SwiperSlide>
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide3} alt='' className='w-full h-full object-cover'/></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
             {/* <SwiperSlide className='bg-zinc-400 px-4 py-4'>Slide 4</SwiperSlide> */}
-            <SwiperSlide className='bg-[#D9D9D9]'></SwiperSlide>
+            <SwiperSlide className='bg-[#D9D9D9]'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
 
           </Swiper>
-          <div className='z-20 absolute top-1/6 left-1/8'>
+          <div className='z-20 absolute top-1/8 left-1/6'>
             <h2 className='text-[58px] font-bold text-[#313440] uppercase flex flex-col leading-none'>Все для защиты <span className='text-[58px] font-bold text-[#4F6B4F] uppercase leading-none'>вашего урожая</span></h2>
             <p className='max-w-113.5 mt-3.75'>Качественные пестициды, удобрения и семена от проверенных поставщиков </p>
             <div className='flex gap-2.5 mt-3.75'>
@@ -71,7 +88,7 @@ export default function Home() {
             <div className='bg-white w-286 h-20 rounded-xl absolute z-10 border border-[#EAEBED] left-1/2 right-1/2 -bottom-2 -translate-x-1/2 flex justify-center gap-3.75 p-4 '>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <GoShieldCheck />
+                  <LuShieldCheck />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
@@ -94,8 +111,8 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex gap-4 items-center'>
-                <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center scale-x-[-1]'>
-                  <BsLeaf />
+                <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
+                  <LuLeaf />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
@@ -107,7 +124,7 @@ export default function Home() {
               </div>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <GiHeadphones />
+                  <FaHeadphonesSimple />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
@@ -120,11 +137,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className='max-w-360 px-33 py-5 '>
+        <section className='max-w-360 px-33 pt-5 pb-2.5 '>
           <div className='font-bold text-[32px] text-[#313440]'>
             <h2>Категории товаров</h2>
           </div>
-          <div className='flex gap-6.25 justify-between w-full mt-3'>
+          <div className='flex gap-3.75 justify-between w-full mt-3'>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
               <Image className='w-full object-cover h-full' src={Pesticide} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
@@ -174,7 +191,7 @@ export default function Home() {
           <div className='flex gap-5 justify-between mt-5 mb-5'>
             <div className='bg-[#EBF7E4] w-full h-49.5 rounded-lg relative overflow-hidden'>
               <div className='flex mt-7.5 ml-7.5 gap-4'>
-                <div className='bg-[#C8E6CA] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#4F6B4F] '><CiUser /></div>
+                <div className='bg-[#C8E6CA] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#4F6B4F] '><FaRegUser /></div>
                 <div className='w-82.5'>
                   <h2 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h2>
                   <p className='text-[12px] text-[#313440]'>Зарегистрируйтесь как покупатель, чтобы совершать заказы и получать доступ к лучшим предложениям.</p>
@@ -195,34 +212,31 @@ export default function Home() {
               </div>
               <Image src={Trava} alt='trava' className='absolute -bottom-27 -right-19.75 h-auto w-60 grayscale' />
             </div>
-            {/* <div className='bg-[#EAEBED] w-full h-49.5 rounded-lg'></div> */}
           </div>
         </section>
-        <span className='bg-[#D9D9D9] h-0.75 w-full block my-2.5'></span>
+        <span className='bg-[#D9D9D9] h-0.75 w-full block mb-2.5'></span>
         <section className='pt-5 pb-15 px-33 flex justify-between w-full gap-15'>
           <div className='w-full flex flex-col gap-7.5'>
             <h2 className='text-[#313440] text-[32px] font-bold'>Часто задаваемые вопросы</h2>
             <div className='flex flex-col gap-3.75'>
-              <div className='flex justify-between items-center py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full'>
-                <h3 className='text-[18px] text-[#313440] font-semibold'>Как оформить заказ?</h3>
-                <CiCirclePlus className='text-[25px] text-[#313440]' />
-              </div>
-              <div className='flex justify-between items-center py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full'>
-                <h3 className='text-[18px] text-[#313440] font-semibold'>Какие способы оплаты доступы?</h3>
-                <CiCirclePlus className='text-[25px] text-[#313440]' />
-              </div>
-              <div className='flex justify-between items-center py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full'>
-                <h3 className='text-[18px] text-[#313440] font-semibold'>Как осуществляется доставка? </h3>
-                <CiCirclePlus className='text-[25px] text-[#313440]' />
-              </div>
-              <div className='flex justify-between items-center py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full'>
-                <h3 className='text-[18px] text-[#313440] font-semibold'>Сколько времени занимает доставка?</h3>
-                <CiCirclePlus className='text-[25px] text-[#313440]' />
-              </div>
-              <div className='flex justify-between items-center py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full'>
-                <h3 className='text-[18px] text-[#313440] font-semibold'>Можно ли вернуть товар?</h3>
-                <CiCirclePlus className='text-[25px] text-[#313440]' />
-              </div>
+              {faqData.map((item) => {
+                const isOpen = cestion === item.id;
+                return (
+                  <div key={item.id} className='py-3.75 px-6.25 border border-[#BABCC3] rounded-lg w-full flex flex-col justify-center cursor-pointer' onClick={() => handleToggle(item.id)}>
+                    <div className='flex justify-between items-center'>
+                      <h3 className='text-[18px] text-[#313440] font-semibold'>{item.q}</h3>
+                      <CiCirclePlus className={`text-[25px] text-[#313440] transition-transform duration-500 ${isOpen ? 'rotate-45' : ''}`} />
+                    </div>
+                    <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-3' : 'grid-rows-[0fr] opacity-0 h-0 mt-0'}`}>
+                      <div className='overflow-hidden text-[#313440] text-[12px]'>
+                        <div className='border-t border-zinc-400/40 px-2'>
+                          <p className='mt-3'>{item.a}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
           <div className='bg-[#EAEBED] rounded-lg p-7.5 w-full'>
@@ -241,7 +255,7 @@ export default function Home() {
           flex items-center justify-center 
           cursor-pointer 
           transition-colors peer relative"  type="checkbox" name='date' value="" id="date" required />
-                <svg
+                {/* <svg
                   className="w-12 h-12 text-[#313440] pointer-events-none absolute opacity-0 peer-checked:opacity-100"
                   fill="none"
                   stroke="currentColor"
@@ -253,7 +267,9 @@ export default function Home() {
                     strokeWidth="6"
                     d="M4 13l4 4L20 7"
                   />
-                </svg>
+                </svg> */}
+                {/* <GiCheckMark className='pointer-events-none text-[#313440] left-0.75 top-0.5 absolute opacity-0 peer-checked:opacity-100' /> */}
+                <ImCheckmark className='pointer-events-none text-[#313440] left-0.5 top-0.5 absolute opacity-0 peer-checked:opacity-100' />
 
                 <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </p></label>
               </div>

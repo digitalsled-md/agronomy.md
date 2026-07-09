@@ -39,8 +39,8 @@ export default function Header() {
                                         Каталог товаров
                                     </div>
                                 </summary>
-                                <div className="absolute bg-white border border-zinc-500/30 rounded-b-lg rounded-tr-lg px-2 py-2 shadow-xl shadow-zinc-500/20 w-100 text-left">
-                                    <div className="flex items-center border border-zinc-300 rounded-md  py-1 px-2 mb-3.75 mt-2" onClick={(e) => e.stopPropagation()}>
+                                <div className="absolute bg-white border border-zinc-500/30 rounded-b-lg rounded-tr-lg px-4 py-4 shadow-xl shadow-zinc-500/20 w-100 text-left">
+                                    <div className="flex items-center border border-zinc-300 rounded-md  py-1 px-2 mb-3.75 mt" onClick={(e) => e.stopPropagation()}>
                                         <input type="text" placeholder="Поиск..." className=" focus:outline-none focus:ring-2 focus:ring-transparent w-full text-[12px]"  />
                                         <span className="h-5 bg-zinc-300 w-px mr-2 block"></span>
                                        <div className=""><BsSearch /></div>
@@ -61,8 +61,8 @@ export default function Header() {
                     <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><MdOutlineNotificationsActive className="text-[#292D32]"/></button>
                     <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><TbShoppingCart className="text-[#292D32]" /></button>
                     <div>
-                        <details className="relative border-[#4F6B4F] border-2 rounded-lg px-3 py-1 z-10">
-                            <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold">RU <IoIosArrowDown /></summary>
+                        <details className="relative  z-10">
+                            <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU <IoIosArrowDown /></summary>
 
                             <div className="absolute rounded bg-white w-full px-3 py-2 -left-px shadow top-10">
                                 <button type="button" className="block w-full text-center">
