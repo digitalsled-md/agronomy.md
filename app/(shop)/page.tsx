@@ -52,7 +52,7 @@ export default function Home() {
             direction='vertical'
             loop={true}
             modules={[Autoplay, Pagination]}
-            className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:!h-[42.6] [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!w-1.75 [&_.swiper-pagination-bullet]:!rounded-[8px] [&_.swiper-pagination-bullet]:!bg-[#FFFFFF80] [&_.swiper-pagination-bullet-active]:!bg-white w-full"
+            className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:!h-[42.6] [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!w-1.75 [&_.swiper-pagination-bullet]:!rounded-[8px] [&_.swiper-pagination-bullet]:!bg-[#FFFFFF]/50 [&_.swiper-pagination-bullet-active]:!bg-white w-full"
 
           >
             <SwiperSlide className='bg-zinc-400'><Image src={Slide1} alt='' className='w-full h-full object-cover'/></SwiperSlide>
@@ -78,7 +78,7 @@ export default function Home() {
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
-                    <h3 className='text-[12px] font-bold'>Проверенное качество</h3>
+                    <h2 className='text-[12px] font-bold'>Проверенное качество</h2>
                     <p className='text-[10px]'>Только сертифицированная продукция</p>
                   </div>
                   <span className='w-px h-10.25 bg-[#EAEBED] block'></span>
@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
-                    <h3 className='text-[12px] font-bold'>Быстрая доставка</h3>
+                    <h2 className='text-[12px] font-bold'>Быстрая доставка</h2>
                     <p className='text-[10px]'>Оперативная доставка по всей Молдове</p>
                   </div>
                   <span className='w-px h-10.25 bg-[#EAEBED] block'></span>
@@ -102,7 +102,7 @@ export default function Home() {
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
-                    <h3 className='text-[12px] font-bold'>Широкий ассортимент</h3>
+                    <h2 className='text-[12px] font-bold'>Широкий ассортимент</h2>
                     <p className='text-[10px]'>Всё необходимое для защиты и питания растений</p>
                   </div>
                   <span className='w-px h-10.25 bg-[#EAEBED] block'></span>
@@ -114,7 +114,7 @@ export default function Home() {
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
-                    <h3 className='text-[12px] font-bold'>Поддержка экспертов</h3>
+                    <h2 className='text-[12px] font-bold'>Поддержка экспертов</h2>
                     <p className='text-[10px]'>Профессиональная консультация по выбору препаратов</p>
                   </div>
                   {/* <span className='w-px h-10.25 bg-[#EAEBED] block'></span> */}
@@ -132,7 +132,7 @@ export default function Home() {
               <Image className='w-full object-cover h-full' src={Pesticide} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
-                  Пестициды
+                  <h2 className='font-semibold text-[14px] text-[#313440]'>Пестициды</h2>
                   <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function Home() {
               <Image className='w-full object-cover h-full' src={Biopreporat} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
-                  Биопрепараты
+                  <h2 className='font-semibold text-[14px] text-[#313440]'>Биопрепараты</h2>
                   <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function Home() {
               <Image className='w-full object-cover h-full' src={Udobrenia} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
-                  Удобрения
+                  <h2 className='font-semibold text-[14px] text-[#313440]'>Удобрения</h2>
                   <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function Home() {
               <Image className='w-full object-cover h-full' src={Semena} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
-                  Семена
+                  <h2 className='font-semibold text-[14px] text-[#313440]'>Семена</h2>
                   <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function Home() {
               <Image className='w-full object-cover h-full' src={Drugoe} alt={''} />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
-                  Другое
+                  <h2 className='font-semibold text-[14px] text-[#313440]'>Другое</h2>
                   <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function Home() {
               <div className='flex mt-7.5 ml-7.5 gap-4'>
                 <div className='bg-[#C8E6CA] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#4F6B4F] '><CiUser /></div>
                 <div className='w-82.5'>
-                  <h3 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h3>
+                  <h2 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h2>
                   <p className='text-[12px] text-[#313440]'>Зарегистрируйтесь как покупатель, чтобы совершать заказы и получать доступ к лучшим предложениям.</p>
                   <button className='bg-[#4F6B4F] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'>Зарегистрироваться</button>
                 </div>
@@ -190,7 +190,7 @@ export default function Home() {
               <div className='flex mt-7.5 ml-7.5 gap-4'>
                 <div className='bg-[#BABCC3] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#313440] '><MdStorefront /></div>
                 <div className='w-82.5'>
-                  <h3 className='font-bold text-[18px] text-[#313440]'>Продавцам и дистрибьюторам</h3>
+                  <h2 className='font-bold text-[18px] text-[#313440]'>Продавцам и дистрибьюторам</h2>
                   <p className='text-[12px] text-[#313440]'>Вы поставщик пестицидов или дистрибьютор?
                     Зарегистрируйтесь, чтобы размещать товары и развивать свой бизнес.</p>
                   <button className='bg-[#313440] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'>Стать продавцом</button>
@@ -258,10 +258,10 @@ export default function Home() {
                   />
                 </svg>
 
-                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </label>
+                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </p></label>
               </div>
-              <p className='text-[12px] text-[#313440] flex gap-1 items-center mt-2.5'><CiLock className='text-[18px]' />Ваши данные защищены и не передаются третьим лицам</p>
-              <button className='bg-[#4F6B4F] text-white w-full py-2.5 px-3.75 rounded-lg font-semibold tect-[20px] mt-2.5' >Свяжитесь со мной</button>
+              <p className='text-[12px] text-[#313440] flex gap-1 items-center mt-2.5'><CiLock className='text-[18px]' /><span className='ml-1.5'>Ваши данные защищены и не передаются третьим лицам</span></p>
+              <button className='bg-[#4F6B4F] text-white w-full py-2.5 px-3.75 rounded-lg font-semibold tect-[20px] mt-2.5' ><p>Свяжитесь со мной</p></button>
             </form>
           </div>
         </section>
