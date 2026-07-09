@@ -6,13 +6,13 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#4F6B4F] text-white px-33 pt-6.25 rounded-t-lg mt-16 pb-2 ">
-            <div className="flex w-full justify-between items-start gap-3">
+        <footer className="bg-[#4F6B4F] text-white px-33 pt-6.25 rounded-t-lg pb-2 max-w-360">
+            <div className="flex w-full justify-between items-start gap-2.5">
                 <div className="flex justify-between w-full">
                     <Link href="/"><h2 className="font-bold text-3xl">.Logo</h2></Link>
                     <span className="bg-[#FFFFFF]/5 h-34 w-px block mr-10"></span>
                 </div>
-                <div className="flex w-full justify-between items-start">
+                <div className="flex w-full justify-between items-start min-w-122.25">
                     <div>
                         <h3 className="text-[14px] font-bold mb-4">Каталог</h3>
                         <p className="text-[12px]">Пестициды</p>
@@ -48,9 +48,9 @@ export default function Footer() {
             <span className="bg-[#FFFFFF]/5 h-px w-full block mt-3"></span>
             <div className="grid grid-cols-4 gap-3 w-full mt-1">
                 <p className="text-[12px] w-full">2026 Agro.md  - Все права защищены</p>
-                <div className="flex items-center justify-start gap-4 col-span-2 ml-17.75">
+                <div className="flex items-center justify-start gap-4 col-span-2 -ml-3">
                     <p className="text-[12px]">Политика конфиденциальности</p>
-                    <p className="text-[12px]">Пользовательское соглашение</p>
+                    <p className="text-[12px] ml-14">Пользовательское соглашение</p>
                 </div>
             </div>
 
