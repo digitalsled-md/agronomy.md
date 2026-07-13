@@ -65,11 +65,11 @@ export default function Header() {
                             <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU <IoIosArrowDown /></summary>
 
                             <div className="absolute rounded bg-white w-full px-3 py-2 -left-px shadow top-10">
-                                <button type="button" className="block w-full text-center">
+                                <button type="button" className="block w-full text-center text-[#4F6B4F]">
                                     RU
                                 </button>
                                 <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                <button type="button" className="block w-full text-center mt-0.5">
+                                <button type="button" className="block w-full text-center mt-0.5 opacity-40">
                                     RO
                                 </button>
                             </div>

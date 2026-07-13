@@ -103,9 +103,9 @@ export default function Home() {
                   <TbTruckDelivery />
                 </div>
                 <div className='w-40 flex items-center'>
-                  <div>
+                  <div className='w-full'>
                     <h2 className='text-[12px] font-bold'>Быстрая доставка</h2>
-                    <p className='text-[10px]'>Оперативная доставка по всей Молдове</p>
+                    <p className='text-[10px] max-w-30'>Оперативная доставка по всей Молдове</p>
                   </div>
                   <span className='w-px h-10.25 bg-[#EAEBED] block'></span>
                 </div>
@@ -115,9 +115,9 @@ export default function Home() {
                   <LuLeaf />
                 </div>
                 <div className='w-40 flex items-center'>
-                  <div>
+                  <div className='w-full'>
                     <h2 className='text-[12px] font-bold'>Широкий ассортимент</h2>
-                    <p className='text-[10px]'>Всё необходимое для защиты и питания растений</p>
+                    <p className='text-[10px] max-w-36'>Всё необходимое для защиты и питания растений</p>
                   </div>
                   <span className='w-px h-10.25 bg-[#EAEBED] block'></span>
                 </div>
@@ -243,7 +243,7 @@ export default function Home() {
             <h2 className='text-[#313440] text-[32px] font-semibold'>Не нашли ответ на вопрос?</h2>
             <p className='text-[16px] text-[#313440] w-103.5'>Оставьте заявку, мы свяжемся с вами и поможем с выбором </p>
             <form action="" className='mt-3.75'>
-              <input type="text" placeholder='Ваш телефон' className='bg-white w-full rounded-lg px-3.75 py-3 border border-[#BABCC3] text-[18px] text-[#313440]' />
+              <input type="text" placeholder='Ваш телефон' className='bg-white w-full rounded-lg px-3.75 py-3 border border-[#BABCC3] text-[18px] text-[#313440]' required/>
               <textarea name="" placeholder='Задайте вопрос' id="" className='bg-white w-full rounded-lg border border-[#BABCC3] p-3.75 h-28.5 mt-2.5 text-[18px] text-[#313440]'></textarea>
               <div className="flex gap-2 relative mt-2.5">
 
