@@ -5,15 +5,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { IoIosArrowForward } from "react-icons/io";
-import { FaRegUser } from "react-icons/fa";
+// import { FaRegUser } from "react-icons/fa";
 
 import { Autoplay, Pagination } from 'swiper/modules';
 
-import { LuShieldCheck } from "react-icons/lu";
-import { TbTruckDelivery } from "react-icons/tb";
-import { LuLeaf } from "react-icons/lu";
-import { FaHeadphonesSimple } from "react-icons/fa6";
-import { MdStorefront } from "react-icons/md";
+// import { LuShieldCheck } from "react-icons/lu";
+// import { TbTruckDelivery } from "react-icons/tb";
+// import { LuLeaf } from "react-icons/lu";
+// import { FaHeadphonesSimple } from "react-icons/fa6";
+// import { MdStorefront } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiLock } from "react-icons/ci";
 
