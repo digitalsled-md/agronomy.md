@@ -27,10 +27,12 @@ import Semena from '@/public/content/Семена.webp'
 import Udobrenia from '@/public/content/Удобрения.webp'
 import Drugoe from '@/public/content/Другое.webp'
 import Trava from '@/public/trava.webp'
-import Slide1 from '@/public/slider/1.webp'
+// import Slide1 from '@/public/slider/1.webp'
 import Slide2 from '@/public/slider/2.webp'
-import Slide3 from '@/public/slider/3.webp'
+// import Slide3 from '@/public/slider/3.webp'
 import { SetStateAction, useState } from 'react';
+import Link from 'next/link';
+import { SheldCheck, TruckDeliver, Leaf, Headphones, Buyer, SalesMan } from '@/components/UI-icon/icons';
 
 
 export default function Home() {
@@ -66,8 +68,7 @@ export default function Home() {
             direction='vertical'
             loop={true}
             modules={[Autoplay, Pagination]}
-            className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:!left-0 [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:!h-[42.6] [&_.swiper-pagination-bullet]:!m-0 [&_.swiper-pagination-bullet]:!w-1.75 [&_.swiper-pagination-bullet]:!rounded-[8px] [&_.swiper-pagination-bullet]:!bg-[#FFFFFF]/50 [&_.swiper-pagination-bullet-active]:!bg-white w-full"
-
+            className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:left-0! [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:h-[42.6]! [&_.swiper-pagination-bullet]:m-0! [&_.swiper-pagination-bullet]:w-1.75! [&_.swiper-pagination-bullet]:rounded-lg! [&_.swiper-pagination-bullet]:bg-[#FFFFFF]/50! [&_.swiper-pagination-bullet-active]:bg-white w-full!"
           >
             <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
             <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
@@ -80,7 +81,7 @@ export default function Home() {
             <h2 className='text-[58px] font-bold text-[#313440] uppercase flex flex-col leading-none'>Все для защиты <span className='text-[58px] font-bold text-[#4F6B4F] uppercase leading-none'>вашего урожая</span></h2>
             <p className='max-w-113.5 mt-3.75'>Качественные пестициды, удобрения и семена от проверенных поставщиков </p>
             <div className='flex gap-2.5 mt-3.75'>
-              <button className='bg-[#4F6B4F] rounded-lg px-8.75 py-2.5 text-white font-semibold'><p>Каталог товаров</p></button>
+              <button className='bg-[#4F6B4F] rounded-lg px-8.75 py-2.5 text-white font-semibold'><Link href="catalog"><p>Каталог товаров</p></Link></button>
               <button className='border-2 border-white rounded-lg px-8.75 py-2.5 text-white font-semibold'><p>Узнать больше</p></button>
             </div>
           </div>
@@ -88,7 +89,7 @@ export default function Home() {
             <div className='bg-white w-286 h-20 rounded-xl absolute z-10 border border-[#EAEBED] left-1/2 right-1/2 -bottom-2 -translate-x-1/2 flex justify-center gap-3.75 p-4 '>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <LuShieldCheck />
+                  <SheldCheck />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
@@ -100,7 +101,7 @@ export default function Home() {
               </div>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <TbTruckDelivery />
+                  <TruckDeliver />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div className='w-full'>
@@ -112,7 +113,7 @@ export default function Home() {
               </div>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <LuLeaf />
+                  <Leaf />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div className='w-full'>
@@ -124,7 +125,7 @@ export default function Home() {
               </div>
               <div className='flex gap-4 items-center'>
                 <div className='w-12.5 h-12.5 bg-[#EBF7E4] p-2.5 rounded-lg text-3xl text-[#4F6B4F] flex justify-center items-center'>
-                  <FaHeadphonesSimple />
+                  <Headphones />
                 </div>
                 <div className='w-40 flex items-center'>
                   <div>
@@ -191,7 +192,7 @@ export default function Home() {
           <div className='flex gap-5 justify-between mt-5 mb-5'>
             <div className='bg-[#EBF7E4] w-full h-49.5 rounded-lg relative overflow-hidden'>
               <div className='flex mt-7.5 ml-7.5 gap-4'>
-                <div className='bg-[#C8E6CA] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#4F6B4F] '><FaRegUser /></div>
+                <div className='bg-[#C8E6CA] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#4F6B4F] '><Buyer /></div>
                 <div className='w-82.5'>
                   <h2 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h2>
                   <p className='text-[12px] text-[#313440]'>Зарегистрируйтесь как покупатель, чтобы совершать заказы и получать доступ к лучшим предложениям.</p>
@@ -202,7 +203,7 @@ export default function Home() {
             </div>
             <div className='bg-[#EAEBED] w-full h-49.5 rounded-lg relative overflow-hidden'>
               <div className='flex mt-7.5 ml-7.5 gap-4'>
-                <div className='bg-[#BABCC3] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#313440] '><MdStorefront /></div>
+                <div className='bg-[#BABCC3] rounded-full p-2.5 w-17.5 h-17.5 flex justify-center items-center text-4xl text-[#313440] '><SalesMan /></div>
                 <div className='w-82.5'>
                   <h2 className='font-bold text-[18px] text-[#313440]'>Продавцам и дистрибьюторам</h2>
                   <p className='text-[12px] text-[#313440]'>Вы поставщик пестицидов или дистрибьютор?
@@ -243,7 +244,7 @@ export default function Home() {
             <h2 className='text-[#313440] text-[32px] font-semibold'>Не нашли ответ на вопрос?</h2>
             <p className='text-[16px] text-[#313440] w-103.5'>Оставьте заявку, мы свяжемся с вами и поможем с выбором </p>
             <form action="" className='mt-3.75'>
-              <input type="text" placeholder='Ваш телефон' className='bg-white w-full rounded-lg px-3.75 py-3 border border-[#BABCC3] text-[14px] text-[#313440]' required/>
+              <input type="text" placeholder='Ваш телефон' className='bg-white w-full rounded-lg px-3.75 py-3 border border-[#BABCC3] text-[14px] text-[#313440]' required />
               <textarea name="" placeholder='Задайте вопрос' id="" className='bg-white w-full rounded-lg border border-[#BABCC3] p-3.75 h-28.5 mt-2.5 text-[14px] text-[#313440]'></textarea>
               <div className="flex gap-2 relative mt-2.5">
 
