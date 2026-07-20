@@ -30,17 +30,13 @@ export default function Register() {
         }
 
         try {
-            // Axios сам превратит объект в JSON и отправит на https://api.fitoprotect.md/api/users/login/
             const response = await api.post('/users/register/', { email, password, username, phone, role });
 
-            // Данные от бэка (токены) лежат прямо в .data
             const { access, refresh } = response.data;
 
-            // Сохраняем их
             localStorage.setItem('access_token', access);
             localStorage.setItem('refresh_token', refresh);
 
-            // Улетаем на главную, задача выполнена!
             router.push('/');
         } catch (error: unknown) {
             if (error instanceof AxiosError) {
