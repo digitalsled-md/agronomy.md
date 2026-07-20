@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   // Он сам возьмет твою строчку из .env.local
-  baseURL: process.env.NEXT_PUBLIC_API_URL, 
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://api.fitoprotect.md/api',
   headers: {
     'Content-Type': 'application/json',
   },
