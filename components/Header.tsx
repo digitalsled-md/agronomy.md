@@ -52,13 +52,13 @@ export default function Header() {
                                         {/* <span className="h-5 bg-zinc-300 w-px mr-2 block"></span> */}
                                         <div className="pr-2.5 text-[#BABCC3]"><Search /></div>
                                     </div>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded py-2.5"><p>Пестициды </p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 hover:mt-2 py-2.5"><p>Пестициды </p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded py-2.5"><p>Биопрепараты</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Биопрепараты</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded py-2.5"><p>Удобрения</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Удобрения</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded py-2.5"><p>Семена</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Семена</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
                                 </div>
                             </details>
                         </div>
