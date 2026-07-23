@@ -231,7 +231,7 @@ export default function Home() {
                     </div>
                     <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-3' : 'grid-rows-[0fr] opacity-0 h-0 mt-0'}`}>
                       <div className='overflow-hidden text-[#313440] text-[12px]'>
-                        <div className='border-t-1 border-[#92AD94] px-2'>
+                        <div className='border-t border-[#92AD94] px-2'>
                           <p className='mt-3'>{item.a}</p>
                           <br />
                           <p>{item.e}</p>
