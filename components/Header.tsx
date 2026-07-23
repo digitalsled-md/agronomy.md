@@ -70,9 +70,7 @@ export default function Header() {
                 </div>
                 <div>
                     {isGuest && (
-                        <div className="items-center gap-3 hidden lg:flex">
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
+                        <div className="items-center gap-3.75 ">
                             <div>
                                 <details className="relative z-10 group">
                                     <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
@@ -98,107 +96,117 @@ export default function Header() {
                         </div>
                     )}
                     {isBuyer && user && (
-                        <div className="flex gap-3">
-                            <div>
-                                <details className="relative z-10 group">
-                                    <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
-                                        <div className="transition-transform duration-100 group-open:rotate-180">
-                                            <IoIosArrowDown />
-                                        </div>
-                                    </summary>
+                        <div className=" gap-3.75 items-center hidden lg:flex">
+                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
+                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
+                            <div className="flex gap-3.75">
+                                <div>
+                                    <details className="relative z-10 group">
+                                        <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
+                                            <div className="transition-transform duration-100 group-open:rotate-180">
+                                                <IoIosArrowDown />
+                                            </div>
+                                        </summary>
 
-                                    <div className="absolute rounded-lg bg-white w-full px-2.5 py-3.75 shadow mt-2 border border-[#4F6B4F]">
-                                        <button type="button" className="block w-full text-center text-[#4F6B4F]">
-                                            RU
-                                        </button>
-                                        <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                        <button type="button" className="block w-full text-center mt-0.5 opacity-40">
-                                            RO
-                                        </button>
-                                    </div>
-                                </details>
-                            </div>
-                            <div>
-                                <details className="relative z-10 group">
-                                    <summary className="cursor-pointer list-none flex items-center gap-1 bg-[#4F6B4F] rounded-lg text-white px-2.5 py-1.5">
-                                        <UserIcon className="text-[14px]" />
-                                        <div className="transition-transform duration-100 group-open:rotate-180">
-                                            <IoIosArrowDown />
+                                        <div className="absolute rounded-lg bg-white w-full px-2.5 py-3.75 shadow mt-2 border border-[#4F6B4F]">
+                                            <button type="button" className="block w-full text-center text-[#4F6B4F]">
+                                                RU
+                                            </button>
+                                            <span className="w-full bg-zinc-400/50 h-px block"></span>
+                                            <button type="button" className="block w-full text-center mt-0.5 opacity-40">
+                                                RO
+                                            </button>
                                         </div>
-                                    </summary>
-                                    <div className="absolute w-fit flex flex-col gap-2.5 rounded-lg bg-white p-5 shadow mt-2 border border-[#4F6B4F]">
-                                        <div className="flex gap-2.5 cursor-pointer">
-                                            <Profile />
-                                            <p className="text-[#7E8290] text-[14px]">Профиль</p>
+                                    </details>
+                                </div>
+                                <div>
+                                    <details className="relative z-10 group">
+                                        <summary className="cursor-pointer list-none flex items-center gap-1 bg-[#4F6B4F] rounded-lg text-white px-2.5 py-1.5">
+                                            <UserIcon className="text-[14px]" />
+                                            <div className="transition-transform duration-100 group-open:rotate-180">
+                                                <IoIosArrowDown />
+                                            </div>
+                                        </summary>
+                                        <div className="absolute w-fit flex flex-col gap-2.5 rounded-lg bg-white p-5 shadow mt-2 border border-[#4F6B4F]">
+                                            <div className="flex gap-2.5 cursor-pointer">
+                                                <Profile />
+                                                <p className="text-[#7E8290] text-[14px]">Профиль</p>
+                                            </div>
+                                            <div className="flex gap-2.5 w-full cursor-pointer">
+                                                <Box />
+                                                <p className="text-[#7E8290] text-[14px] text-nowrap">Мои заказы</p>
+                                            </div>
+                                            <div className="flex gap-2.5 cursor-pointer">
+                                                <Setings />
+                                                <p className="text-[#7E8290] text-[14px]">Настройки</p>
+                                            </div>
+                                            <div className="flex gap-2.5 cursor-pointer" onClick={logout}>
+                                                <Exit />
+                                                <p className="text-[#7E8290] text-[14px]">Выйти</p>
+                                            </div>
                                         </div>
-                                        <div className="flex gap-2.5 w-full cursor-pointer">
-                                            <Box />
-                                            <p className="text-[#7E8290] text-[14px] text-nowrap">Мои заказы</p>
-                                        </div>
-                                        <div className="flex gap-2.5 cursor-pointer">
-                                            <Setings />
-                                            <p className="text-[#7E8290] text-[14px]">Настройки</p>
-                                        </div>
-                                        <div className="flex gap-2.5 cursor-pointer" onClick={logout}>
-                                            <Exit />
-                                            <p className="text-[#7E8290] text-[14px]">Выйти</p>
-                                        </div>
-                                    </div>
-                                </details>
-                            </div>
-                        </div >
+                                    </details>
+                                </div>
+                            </div >
+                        </div>
+
                     )}
 
                     {isSeller && user && (
-                        <div className="flex gap-3">
-                            <div>
-                                <details className="relative z-10 group">
-                                    <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
-                                        <div className="transition-transform duration-100 group-open:rotate-180">
-                                            <IoIosArrowDown />
-                                        </div>
-                                    </summary>
+                        <div className="flex gap=3.75">
+                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
+                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
+                            <div className="flex gap-3.75">
+                                <div>
+                                    <details className="relative z-10 group">
+                                        <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
+                                            <div className="transition-transform duration-100 group-open:rotate-180">
+                                                <IoIosArrowDown />
+                                            </div>
+                                        </summary>
 
-                                    <div className="absolute rounded-lg bg-white w-full px-2.5 py-3.75 shadow mt-2 border border-[#4F6B4F]">
-                                        <button type="button" className="block w-full text-center text-[#4F6B4F]">
-                                            RU
-                                        </button>
-                                        <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                        <button type="button" className="block w-full text-center mt-0.5 opacity-40">
-                                            RO
-                                        </button>
-                                    </div>
-                                </details>
-                            </div>
-                            <div>
-                                <details className="relative z-10 group">
-                                    <summary className="cursor-pointer list-none flex items-center gap-1 bg-[#4F6B4F] rounded-lg text-white px-2.5 py-1.5">
-                                        <UserIcon className="text-[14px]" />
-                                        <div className="transition-transform duration-100 group-open:rotate-180">
-                                            <IoIosArrowDown />
+                                        <div className="absolute rounded-lg bg-white w-full px-2.5 py-3.75 shadow mt-2 border border-[#4F6B4F]">
+                                            <button type="button" className="block w-full text-center text-[#4F6B4F]">
+                                                RU
+                                            </button>
+                                            <span className="w-full bg-zinc-400/50 h-px block"></span>
+                                            <button type="button" className="block w-full text-center mt-0.5 opacity-40">
+                                                RO
+                                            </button>
                                         </div>
-                                    </summary>
-                                    <div className="absolute w-fit flex flex-col gap-2.5 rounded-lg bg-white p-5 shadow mt-2 border border-[#4F6B4F]">
-                                        <div className="flex gap-2.5 cursor-pointer">
-                                            <Profile />
-                                            <p className="text-[#7E8290] text-[14px]">Профиль</p>
+                                    </details>
+                                </div>
+                                <div>
+                                    <details className="relative z-10 group">
+                                        <summary className="cursor-pointer list-none flex items-center gap-1 bg-[#4F6B4F] rounded-lg text-white px-2.5 py-1.5">
+                                            <UserIcon className="text-[14px]" />
+                                            <div className="transition-transform duration-100 group-open:rotate-180">
+                                                <IoIosArrowDown />
+                                            </div>
+                                        </summary>
+                                        <div className="absolute w-fit flex flex-col gap-2.5 rounded-lg bg-white p-5 shadow mt-2 border border-[#4F6B4F]">
+                                            <div className="flex gap-2.5 cursor-pointer">
+                                                <Profile />
+                                                <p className="text-[#7E8290] text-[14px]">Профиль</p>
+                                            </div>
+                                            <div className="flex gap-2.5 w-full cursor-pointer">
+                                                <Box />
+                                                <p className="text-[#7E8290] text-[14px] text-nowrap">Мои товары</p>
+                                            </div>
+                                            <div className="flex gap-2.5 cursor-pointer">
+                                                <Setings />
+                                                <p className="text-[#7E8290] text-[14px]">Настройки</p>
+                                            </div>
+                                            <div className="flex gap-2.5 cursor-pointer" onClick={logout}>
+                                                <Exit />
+                                                <p className="text-[#7E8290] text-[14px]">Выйти</p>
+                                            </div>
                                         </div>
-                                        <div className="flex gap-2.5 w-full cursor-pointer">
-                                            <Box />
-                                            <p className="text-[#7E8290] text-[14px] text-nowrap">Мои товары</p>
-                                        </div>
-                                        <div className="flex gap-2.5 cursor-pointer">
-                                            <Setings />
-                                            <p className="text-[#7E8290] text-[14px]">Настройки</p>
-                                        </div>
-                                        <div className="flex gap-2.5 cursor-pointer" onClick={logout}>
-                                            <Exit />
-                                            <p className="text-[#7E8290] text-[14px]">Выйти</p>
-                                        </div>
-                                    </div>
-                                </details>
-                            </div>
-                        </div >
+                                    </details>
+                                </div>
+                            </div >
+                        </div>
+
                     )}
                 </div >
             </div >
