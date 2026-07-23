@@ -70,7 +70,7 @@ export default function Header() {
                 </div>
                 <div>
                     {isGuest && (
-                        <div className="items-center gap-3.75 ">
+                        <div className="items-center gap-3.75 flex ">
                             <div>
                                 <details className="relative z-10 group">
                                     <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
