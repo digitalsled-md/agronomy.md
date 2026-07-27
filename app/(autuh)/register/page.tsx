@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ShopingCart, Shop, Buyer, Email, Phone, Lock, SheldCheck, Bif } from '@/components/UI-icon/icons';
 import Logo from "@/public/logo.svg"
 
-import { useState, type FormEvent } from 'react';
+import { Suspense, useState, type FormEvent } from 'react';
 import { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
@@ -14,7 +14,7 @@ import { useSearchParams } from 'next/navigation';
 type Role = 'buyer' | 'seller';
 
 
-export default function Register() {
+function RegisterContent() {
     const [email, setEmail] = useState('');
     const searchParams = useSearchParams();
     const roleFromUrl = searchParams.get('role');
@@ -22,7 +22,7 @@ export default function Register() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
-    const [role, setRole] = useState<'buyer' | 'seller'>(
+    const [role, setRole] = useState<Role>(
         roleFromUrl === 'seller' ? 'seller' : 'buyer');
     const router = useRouter();
 
@@ -138,4 +138,12 @@ export default function Register() {
             </div>
         </div>
     )
+}
+
+export default function Register() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Загрузка...</div>}>
+      <RegisterContent />
+    </Suspense>
+  );
 }
