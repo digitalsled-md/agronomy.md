@@ -9,15 +9,21 @@ import { useState, type FormEvent } from 'react';
 import { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
+import { useSearchParams } from 'next/navigation';
+
+type Role = 'buyer' | 'seller';
 
 
 export default function Register() {
     const [email, setEmail] = useState('');
+    const searchParams = useSearchParams();
+    const roleFromUrl = searchParams.get('role');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [username, setUserName] = useState('');
     const [phone, setPhone] = useState('');
-    const [role, setRole] = useState<'buyer' | 'seller'>('buyer');
+    const [role, setRole] = useState<'buyer' | 'seller'>(
+        roleFromUrl === 'seller' ? 'seller' : 'buyer');
     const router = useRouter();
 
 
@@ -73,20 +79,18 @@ export default function Register() {
                     </div>
                     <form onSubmit={handRegister}>
                         <div className='flex gap-2.5'>
-                            <div onClick={() => setRole('buyer')} className={`relative cursor-pointer transition-all flex flex-col gap-2.5 items-center py-5 px-4.5 rounded-lg border-2 w-1/2 ${
-                                    role === 'buyer' 
-                                        ? 'bg-[#F3F6EF] border-[#4F6B4F]' 
-                                        : 'bg-[#F3F6EF] border-[#4F6B4F]/20'
+                            <div onClick={() => setRole('buyer')} className={`relative cursor-pointer transition-all flex flex-col gap-2.5 items-center py-5 px-4.5 rounded-lg border-2 w-1/2 ${role === 'buyer'
+                                ? 'bg-[#F3F6EF] border-[#4F6B4F]'
+                                : 'bg-[#F3F6EF] border-[#4F6B4F]/20'
                                 }`}>
-                                    <div className={`bg-[#528731] w-7.5 h-7.5 py-2 px-1.75 right-2 top-2 rounded-full absolute ${role === 'buyer' ? 'block' : 'hidden'}`}><Bif /></div>
+                                <div className={`bg-[#528731] w-7.5 h-7.5 py-2 px-1.75 right-2 top-2 rounded-full absolute ${role === 'buyer' ? 'block' : 'hidden'}`}><Bif /></div>
                                 <ShopingCart width="unset" height="unset" className='text-[#528731] w-15' />
                                 <h2 className='font-bold text-[24px] text-[#313440]'>Покупатель</h2>
                                 <p className='text-[14px] text-[#313440]'>Покупаю средства защиты растений</p>
                             </div>
-                            <div onClick={() => setRole('seller')} className={`relative cursor-pointer transition-all flex flex-col gap-2.5 items-center py-5 px-4.5 rounded-lg border-2 w-1/2 ${
-                                    role === 'seller' 
-                                        ? 'bg-[#FDF9F0] border-[#D4A34D]' 
-                                        : 'bg-[#FDF9F0] border-[#D4A34D]/20'
+                            <div onClick={() => setRole('seller')} className={`relative cursor-pointer transition-all flex flex-col gap-2.5 items-center py-5 px-4.5 rounded-lg border-2 w-1/2 ${role === 'seller'
+                                ? 'bg-[#FDF9F0] border-[#D4A34D]'
+                                : 'bg-[#FDF9F0] border-[#D4A34D]/20'
                                 }`}>
                                 <div className={`bg-[#D4A34D] w-7.5 h-7.5 py-2 px-1.75 right-2 top-2 rounded-full absolute ${role === 'seller' ? 'block' : 'hidden'}`}><Bif /></div>
                                 <Shop width="unset" height="unset" className='text-[#528731] w-15' />
@@ -97,15 +101,15 @@ export default function Register() {
                         <div className='flex flex-col gap-2.5 mt-3.75'>
                             <div className='bg-white border border-[#BABCC3] py-5 px-3.75 rounded-lg flex items-center gap-2.5'>
                                 <Buyer className='text-[#7E8290] w-5 h-5' />
-                                <input required type="text" value={username}  onChange={(e) => setUserName(e.target.value)}  placeholder='Имя / Название компании' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
+                                <input required type="text" value={username} onChange={(e) => setUserName(e.target.value)} placeholder='Имя / Название компании' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
                             </div>
                             <div className='bg-white border border-[#BABCC3] py-5 px-3.75 rounded-lg flex items-center gap-2.5'>
                                 <Email className='text-[#7E8290] w-5 h-5' />
-                                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}  placeholder='Email' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
+                                <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
                             </div>
                             <div className='bg-white border border-[#BABCC3] py-5 px-3.75 rounded-lg flex items-center gap-2.5'>
                                 <Phone />
-                                <input required type="text" value={phone}  onChange={(e) => setPhone(e.target.value)}  placeholder='Телефон' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
+                                <input required type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Телефон' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
                             </div>
                             <div className='bg-white border border-[#BABCC3] py-5 px-3.75 rounded-lg flex items-center gap-2.5'>
                                 <Lock />

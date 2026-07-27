@@ -196,7 +196,7 @@ export default function Home() {
                 <div className='w-82.5'>
                   <h2 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h2>
                   <p className='text-[12px] text-[#313440]'>Зарегистрируйтесь как покупатель, чтобы совершать заказы и получать доступ к лучшим предложениям.</p>
-                  <button className='bg-[#4F6B4F] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register">Зарегистрироваться</Link></button>
+                  <button className='bg-[#4F6B4F] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register?role=buyer">Зарегистрироваться</Link></button>
                 </div>
               </div>
               <Image src={Trava} alt='trava' className='absolute -bottom-27 -right-19.75 h-auto w-60' />
@@ -208,7 +208,7 @@ export default function Home() {
                   <h2 className='font-bold text-[18px] text-[#313440]'>Продавцам и дистрибьюторам</h2>
                   <p className='text-[12px] text-[#313440]'>Вы поставщик пестицидов или дистрибьютор?
                     Зарегистрируйтесь, чтобы размещать товары и развивать свой бизнес.</p>
-                  <button className='bg-[#313440] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register">Стать продавцом</Link></button>
+                  <button className='bg-[#313440] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register?role=seller">Стать продавцом</Link></button>
                 </div>
               </div>
               <Image src={Trava} alt='trava' className='absolute -bottom-27 -right-19.75 h-auto w-60 grayscale' />

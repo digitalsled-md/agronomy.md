@@ -91,7 +91,7 @@ export default function Header() {
                                 </details>
                             </div>
                             <button className="bg-[#4F6B4F] px-2.5 py-1.5 rounded-lg text-white font-bold text-[12px]" type="button">
-                                <Link href="login" className="flex items-center gap-2"><UserIcon className="text-[14px]" /> Войти</Link>
+                                <Link href="/login" className="flex items-center gap-2"><UserIcon className="text-[14px]" /> Войти</Link>
                             </button>
                         </div>
                     )}
