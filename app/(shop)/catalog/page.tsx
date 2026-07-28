@@ -55,7 +55,7 @@ function CatalogContent() {
                             : 0;
                         return (
                             <div key={product.id} className="border p-3.25 rounded-lg h-full overflow-hidden border-[#EAEBED] w-full flex flex-col justify-between">
-                                <Link href={`/catalog/${product.id}`}>
+                                <Link href={`/catalog/${product.slug}`}>
                                 <div className="bg-[#D9D9D9] rounded-lg h-38.75 w-full block mb-2 shrink-0 cover relative" >
                                     {hasDiscount && (
                                         <span className='bg-[#FF5757] rounded-[5px] text-white text-[12px] px-2.5 py-1 absolute right-2 top-2 font-semibold'>-{discountPercent}%</span>

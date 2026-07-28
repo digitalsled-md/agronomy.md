@@ -23,9 +23,9 @@ interface ProductDetail {
 export default function ProductDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = use(params);
+  const { slug } = use(params);
 
   const [product, setProduct] = useState<ProductDetail | null>(null);
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ export default function ProductDetailPage({
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await api.get(`/products/${id}/`);
+        const res = await api.get(`/products/${slug}/`);
         setProduct(res.data);
       } catch (err) {
         console.error('Ошибка загрузки товара:', err);
@@ -44,7 +44,7 @@ export default function ProductDetailPage({
     };
 
     void fetchProduct();
-  }, [id]);
+  }, [slug]);
 
   useEffect(() => {
     if (!product) return;
