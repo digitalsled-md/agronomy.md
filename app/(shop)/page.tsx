@@ -16,7 +16,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 // import { MdStorefront } from "react-icons/md";
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
-import { CiLock } from "react-icons/ci";
+// import { CiLock } from "react-icons/ci";
 
 import { ImCheckmark } from "react-icons/im";
 
@@ -196,7 +196,7 @@ export default function Home() {
                 <div className='w-82.5'>
                   <h2 className='font-bold text-[18px] text-[#4F6B4F]'>Покупателям</h2>
                   <p className='text-[12px] text-[#313440]'>Зарегистрируйтесь как покупатель, чтобы совершать заказы и получать доступ к лучшим предложениям.</p>
-                  <button className='bg-[#4F6B4F] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register?role=buyer">Зарегистрироваться</Link></button>
+                  <button className='bg-[#4F6B4F] rounded-lg py-1.5 px-5.5 text-white text-[12px] mt-2.5'><Link href="register?role=buyer">Зарегистрироваться</Link></button>
                 </div>
               </div>
               <Image src={Trava} alt='trava' className='absolute -bottom-27 -right-19.75 h-auto w-60' />
@@ -208,7 +208,7 @@ export default function Home() {
                   <h2 className='font-bold text-[18px] text-[#313440]'>Продавцам и дистрибьюторам</h2>
                   <p className='text-[12px] text-[#313440]'>Вы поставщик пестицидов или дистрибьютор?
                     Зарегистрируйтесь, чтобы размещать товары и развивать свой бизнес.</p>
-                  <button className='bg-[#313440] rounded-lg py-1.25 px-8.75 text-white text-[12px] mt-5'><Link href="register?role=seller">Стать продавцом</Link></button>
+                  <button className='bg-[#313440] rounded-lg py-1.5 px-5.5 text-white text-[12px] mt-2.5'><Link href="register?role=seller">Стать продавцом</Link></button>
                 </div>
               </div>
               <Image src={Trava} alt='trava' className='absolute -bottom-27 -right-19.75 h-auto w-60 grayscale' />
@@ -245,7 +245,6 @@ export default function Home() {
           </div>
           <div className='bg-[#EAEBED] rounded-lg p-7.5 w-full'>
             <h2 className='text-[#313440] text-[32px] font-semibold'>Не нашли ответ на вопрос?</h2>
-            <p className='text-[16px] text-[#313440] w-103.5'>Оставьте заявку, мы свяжемся с вами и поможем с выбором </p>
             <form action="" className='mt-3.75'>
               <input type="text" placeholder='Ваш телефон' className='bg-white w-full rounded-lg px-3.75 py-3 border border-[#BABCC3] text-[14px] text-[#313440]' required />
               <textarea name="" placeholder='Задайте вопрос' id="" className='bg-white w-full rounded-lg border border-[#BABCC3] p-3.75 h-28.5 mt-2.5 text-[14px] text-[#313440]'></textarea>
@@ -258,13 +257,14 @@ export default function Home() {
           focus:outline-none 
           flex items-center justify-center 
           cursor-pointer 
+          checked:bg-[#528731]
           transition-colors peer relative"  type="checkbox" name='date' value="" id="date" required />
-                <ImCheckmark className='pointer-events-none text-[#313440] left-0.5 top-0.5 absolute opacity-0 peer-checked:opacity-100' />
+                <ImCheckmark className='pointer-events-none text-white left-0.5 top-0.5 absolute opacity-0 peer-checked:opacity-100' />
 
-                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности </p></label>
+                <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> <p>Я даю согласие на <Link className='text-[#4F6B4F] underline' href="/Privacy">обработку персональных данных</Link> и принимаю условия <Link className='text-[#4F6B4F] underline' href="/Agreement">Пользовательского соглашения</Link></p></label>
               </div>
-              <p className='text-[12px] text-[#313440] flex gap-1 items-center mt-2.5'><CiLock className='text-[18px]' /><span className='ml-1.5'>Ваши данные защищены и не передаются третьим лицам</span></p>
-              <button className='bg-[#4F6B4F] text-white w-full py-2.5 px-3.75 rounded-lg font-semibold tect-[20px] mt-2.5' ><p>Свяжитесь со мной</p></button>
+              {/* <p className='text-[12px] text-[#313440] flex gap-1 items-center mt-2.5'><CiLock className='text-[18px]' /><span className='ml-1.5'>Ваши данные защищены и не передаются третьим лицам</span></p> */}
+              <button className='bg-[#4F6B4F] text-white w-full py-2.5 px-3.75 rounded-lg font-semibold tect-[20px] mt-2.5' ><p>Получить ответ</p></button>
             </form>
           </div>
         </section>

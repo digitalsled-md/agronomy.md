@@ -9,7 +9,7 @@ const roboto = Roboto({
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Breadcrumbs from '@/components/Breadcrumbs';
+// import Breadcrumbs from '@/components/Breadcrumbs';
 
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" >
         <div className=" px-4 container max-w-360 mx-auto">
           <Header />
-          <Breadcrumbs />
+          {/* <Breadcrumbs /> */}
           {children}
           <Footer />
         </div>
