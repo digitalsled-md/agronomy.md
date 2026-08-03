@@ -65,7 +65,7 @@ export default function CategoryFilter() {
                 Все
             </button>
             {categories.map((cat) => {
-                const catValue = cat.slug || cat.id;
+                const catValue = cat.slug ?? cat.id;
                 const isActive = activeCategory === String(catValue);
 
                 return (

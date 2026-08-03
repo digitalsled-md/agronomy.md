@@ -14,6 +14,7 @@ interface Product {
     price: number;
     discount: number;
     price_with_discount: number;
+    category:{ id: number; slug?: string; name: string };
     slug: string;
 }
 
@@ -28,9 +29,17 @@ function CatalogContent() {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                const endpoint = category ? `/products/?category=${category}` : '/products/';
-                const res = await api.get(endpoint);
-                setProducts(res.data as Product[]);
+                //Фильтрацыя товара по категориям на бэкенде
+                
+                // const endpoint = category ? `/products/?category=${category}` : '/products/';
+                // const res = await api.get(endpoint);
+                // setProducts(res.data as Product[]);
+
+                //Фильтрацыя товара по категориям на фронтенде
+                const res = await api.get('/products/');
+                const all = res.data as Product[];
+                const filtered = category ? all.filter(p => p.category?.slug === category || String(p.category?.id) === category) : all;
+                setProducts(filtered);
             } catch (err) {
                 console.error('Ошибка загрузки товаров:', err);
             } finally {
