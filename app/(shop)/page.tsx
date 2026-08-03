@@ -71,11 +71,11 @@ export default function Home() {
             modules={[Autoplay, Pagination]}
             className="mySwiper h-97.75 rounded-xl [&_.swiper-pagination]:h-68.25 [&_.swiper-pagination]:flex [&_.swiper-pagination]:flex-col [&_.swiper-pagination]:justify-around [&_.swiper-pagination]:gap-2.5 [&_.swiper-pagination]:left-0! [&_.swiper-pagination]:ml-32 [&_.swiper-pagination-bullet]:h-[42.6]! [&_.swiper-pagination-bullet]:m-0! [&_.swiper-pagination-bullet]:w-1.75! [&_.swiper-pagination-bullet]:rounded-lg! [&_.swiper-pagination-bullet]:bg-[#FFFFFF]/50! [&_.swiper-pagination-bullet-active]:bg-white w-full!"
           >
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
-            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' priority /></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' priority /></SwiperSlide>
+            <SwiperSlide className='bg-zinc-400'><Image src={Slide2} alt='' className='w-full h-full object-cover' priority /></SwiperSlide>
             {/* <SwiperSlide className='bg-zinc-400 px-4 py-4'>Slide 4</SwiperSlide> */}
-            <SwiperSlide className='bg-[#D9D9D9]'><Image src={Slide2} alt='' className='w-full h-full object-cover' /></SwiperSlide>
+            <SwiperSlide className='bg-[#D9D9D9]'><Image src={Slide2} alt='' className='w-full h-full object-cover' priority /></SwiperSlide>
 
           </Swiper>
           <div className='z-20 absolute top-1/8 left-1/6'>
@@ -83,7 +83,7 @@ export default function Home() {
             <p className='max-w-113.5 mt-3.75'>Качественные пестициды, удобрения и семена от проверенных поставщиков </p>
             <div className='flex gap-2.5 mt-3.75'>
               <button className='bg-[#4F6B4F] rounded-lg px-8.75 py-2.5 text-white font-semibold'><Link href="catalog"><p>Каталог товаров</p></Link></button>
-              <button className='border-2 border-[#313440] rounded-lg px-8.75 py-2.5 font-semibold text-[#313440]'><p>Узнать больше</p></button>
+              <button className='border-2 border-[#313440] rounded-lg px-8.75 py-2.5 font-semibold text-[#313440]'><Link href="register?role=seller">Стать продавцом</Link></button>
             </div>
           </div>
           <div className='max-w-360 px-33 py-3.75'>
@@ -144,7 +144,7 @@ export default function Home() {
           </div>
           <div className='flex gap-3.75 justify-between w-full mt-3'>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Pesticide} alt={''} />
+              <Image className='w-full object-cover h-full' src={Pesticide} alt={''} priority />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                   <h2 className='font-semibold text-[14px] text-[#313440]'>Пестициды</h2>
@@ -153,7 +153,7 @@ export default function Home() {
               </div>
             </div>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Biopreporat} alt={''} />
+              <Image className='w-full object-cover h-full' src={Biopreporat} alt={''} priority />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                   <h2 className='font-semibold text-[14px] text-[#313440]'>Биопрепараты</h2>
@@ -162,7 +162,7 @@ export default function Home() {
               </div>
             </div>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Udobrenia} alt={''} />
+              <Image className='w-full object-cover h-full' src={Udobrenia} alt={''} priority />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                   <h2 className='font-semibold text-[14px] text-[#313440]'>Удобрения</h2>
@@ -171,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Semena} alt={''} />
+              <Image className='w-full object-cover h-full' src={Semena} alt={''} priority />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                   <h2 className='font-semibold text-[14px] text-[#313440]'>Семена</h2>
@@ -180,7 +180,7 @@ export default function Home() {
               </div>
             </div>
             <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Drugoe} alt={''} />
+              <Image className='w-full object-cover h-full' src={Drugoe} alt={''} priority />
               <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                 <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                   <h2 className='font-semibold text-[14px] text-[#313440]'>Другое</h2>
