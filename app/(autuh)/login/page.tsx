@@ -53,11 +53,13 @@ export default function Login() {
             </div>
             <div className='flex flex-col w-full justify-center h-screen'>
                 <div className='z-10 mt-11.25'>
-                    <Image
-                        src={Logo}
-                        alt='Logo'
-                        className='mx-auto'
-                    />
+                    <Link href="/">
+                        <Image
+                            src={Logo}
+                            alt='Logo'
+                            className='mx-auto'
+                        />
+                    </Link>
                 </div>
                 <div className='mt-11.25 w-full bg-white rounded-lg border border-[#BABCC3] px-12.5 py-10 max-w-153 max-h-208 mx-auto text-center flex flex-col gap-3.75'>
                     <form onSubmit={handleLogin}>

@@ -16,9 +16,9 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={``}
+      className={`min-h-full`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="">{children}</body>
     </html>
   );
 }

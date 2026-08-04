@@ -1,11 +1,4 @@
 import type { Metadata } from "next";
-// import "./globals.css";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -23,19 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={`${roboto.className}`}
-      suppressHydrationWarning={true}
-    >
-      <body className="min-h-full" >
         <div className=" px-4 container max-w-360 mx-auto">
           <Header />
           {/* <Breadcrumbs /> */}
           {children}
           <Footer />
         </div>
-      </body>
-    </html>
   );
 }
