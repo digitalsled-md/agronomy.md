@@ -54,16 +54,17 @@ export default function CategoryFilter() {
         );
     }
     return (
-        <div className="flex items-center gap-3 overflow-x-auto py-5 scrollbar-none">
+        <div className="flex items-center gap-3 overflow-x-auto py-5 scrollbar-none h-full">
             <button
                 onClick={() => handleSelectCategory('all')}
-                className={`px-3.5 py-1.75 rounded-lg border text-[15px] font-medium transition-all whitespace-nowrap cursor-pointer ${activeCategory === 'all'
+                className={` px-3.5 py-1.75 rounded-lg border text-[15px] font-medium transition-all whitespace-nowrap cursor-pointer ${activeCategory === 'all'
                     ? 'bg-[#92AD94] text-white border-white'
                     : 'bg-white text-[#7E8290] border-[#7E8290] hover:border-[#708670] hover:text-[#313440]'
                     }`}
             >
                 Все
             </button>
+            <span className='bg-[#BABCC3] h-7.5 w-0.5 block'></span>
             {categories.map((cat) => {
                 const catValue = cat.slug ?? cat.id;
                 const isActive = activeCategory === String(catValue);

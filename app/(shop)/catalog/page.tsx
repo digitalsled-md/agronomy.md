@@ -4,8 +4,9 @@ import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import CategoryFilter from '@/components/catalog/CategoryFilter';
 import api from '@/lib/api';
-import { AddToCartIcon } from '@/components/UI-icon/icons';
+import { AddToCartIcon, Star } from '@/components/UI-icon/icons';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Product {
     id: string | number;
@@ -14,8 +15,12 @@ interface Product {
     price: number;
     discount: number;
     price_with_discount: number;
-    category:{ id: number; slug?: string; name: string };
+    category: { id: number; slug?: string; name: string };
     slug: string;
+    inStock: boolean;
+    isNew: boolean;
+    isTopSale: boolean;
+    image: string;
 }
 
 function CatalogContent() {
@@ -30,11 +35,19 @@ function CatalogContent() {
             setLoading(true);
             try {
                 //Фильтрацыя товара по категориям на бэкенде
-                
                 const endpoint = category ? `/products/?category=${category}` : '/products/';
                 const res = await api.get(endpoint);
-                setProducts(res.data as Product[]);
+                // setProducts(res.data as Product[]);
+                const setProductsData = res.data as Product[];
 
+                const enrichedProducts = setProductsData.map((item, index) => ({
+                    ...item,
+                    inStock: item.inStock ?? index !== 1,
+                    isNew: item.isNew ?? index % 2 === 0,
+                    isTopSale: item.isTopSale ?? index === 0,
+                }));
+
+                setProducts(enrichedProducts);
                 //Фильтрацыя товара по категориям на фронтенде
                 // const res = await api.get('/products/');
                 // const all = res.data as Product[];
@@ -63,35 +76,49 @@ function CatalogContent() {
                             ? Math.round(((product.price - product.price_with_discount) / product.price) * 100)
                             : 0;
                         return (
-                            <div key={product.id} className="border p-3.25 rounded-lg h-full overflow-hidden border-[#EAEBED] w-full flex flex-col justify-between">
+                            <div key={product.id} className="border p-3.25 rounded-lg h-full overflow-hidden border-[#EAEBED] bg-[#92AD941A] w-full flex flex-col justify-between">
                                 <Link href={`/catalog/${product.slug}`}>
-                                <div className="bg-[#D9D9D9] rounded-lg h-38.75 w-full block mb-2 shrink-0 cover relative" >
-                                    {hasDiscount && (
-                                        <span className='bg-[#FF5757] rounded-[5px] text-white text-[12px] px-2.5 py-1 absolute right-2 top-2 font-semibold'>-{discountPercent}%</span>
-                                    )}
-                                </div>
-                                <div className="flex flex-col justify-start grow overflow-hidden w-full">
-                                    <h2 className='text-[#313440] text-[16px] font-bold line-clamp-1'>{product.name}</h2>
-                                    <p className="text-[#313440] text-[12px] line-clamp-2">{product.description}</p>
-                                </div>
+                                    <div className="bg-[#FFFFFF] border border-[#EAEBED] rounded-lg h-38.75 w-full block mb-2 shrink-0 cover relative" >
+                                        {hasDiscount && (
+                                            <span className='bg-[#FF5757] rounded-[5px] text-white text-[12px] px-2.5 py-1 absolute right-2 top-2 font-semibold'>-{discountPercent}%</span>
+                                        )}
+                                        {product.isNew && (
+                                            <span className='bg-[#F4F4F5] flex items-center gap-1.5 rounded-[5px] text-[12px] px-2.5 py-1 absolute left-2 top-2 font-semibold text-[#528731]'><span className='bg-[#528731] rounded-full flex items-center justify-center w-4 h-4 text-white'>+</span>Новое</span>
+                                        )}
+                                        {product.isTopSale && (
+                                            <span className='bg-[#F4F4F5] flex items-center gap-1.5 rounded-[5px] text-[12px] px-2.5 py-1 absolute left-2 top-2 font-semibold text-[#0CB827]'><Star />Топ продаж</span>
+                                        )}
+                                        {product.inStock ? (
+                                            <span className='bg-transparent flex items-center gap-1.5 rounded-[5px] text-[12px] px-2.5 py-1 absolute left-2 bottom-2 font-semibold text-[#528731]'></span>
+                                        ) : (
+                                            <div className='bg-black/35 w-full h-full rounded-lg'>
+                                                <span className='bg-[#f9d0d0]/90 border border-[#FF5B5B] flex items-center gap-1.5 rounded-[5px] text-[12px] px-2.5 py-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-semibold text-[#FF5B5B] z-20'>Нет в наличии</span>
+                                            </div>
+
+                                        )}
+                                        <Image src={product.image || "/no-image.png"} width={50} height={50} alt={product.name} className=" object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                                    </div>
+                                    <div className="flex flex-col justify-start grow overflow-hidden w-full">
+                                        <h2 className='text-[#313440] text-[16px] font-bold line-clamp-1'>{product.name}</h2>
+                                        <p className="text-[#313440] text-[12px] line-clamp-2">{product.description}</p>
+                                    </div>
                                 </Link>
                                 <div className='flex items-end justify-between w-full pt-8 mt-auto'>
                                     <div className='w-full'>
                                         {hasDiscount && (
                                             <p className='text-[11.38px] text-[#A25B40] line-through font-semibold'>{product.price} MDL</p>
                                         )}
-                                        <p className="text-[#528731] font-semibold">{product.price_with_discount} MDL</p>
+                                        <p className="text-[#528731] text-[18px] font-semibold">{product.price_with_discount} MDL</p>
                                     </div>
-                                    <button className="cursor-pointer p-1 hover:opacity-80 transition-opacity">
-                                        <AddToCartIcon />
+                                    <button className="cursor-pointer p-1.5 hover:opacity-80 transition-opacity bg-white rounded-full">
+                                        <AddToCartIcon className='text-[#528731]' />
                                     </button>
                                 </div>
                             </div>
-            )
-
+                        )
                     })
                 )}
-        </div>
+            </div>
         </div >
     );
 }
