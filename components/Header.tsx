@@ -20,7 +20,7 @@ export default function Header() {
 
     if (loading) {
         return (
-            <header className="w-full h-16 bg-white border-b border-[#BABCC3] px-10 flex items-center justify-between">
+            <header className="w-full h-16 bg-white border-b border-[#BABCC3] px-10 flex items-center justify-between sticky top-0 z-50">
                 <div className="w-32 h-6 bg-gray-200 animate-pulse rounded" />
                 <div className="w-24 h-8 bg-gray-200 animate-pulse rounded-lg" />
             </header>
@@ -30,8 +30,8 @@ export default function Header() {
 
 
     return (
-        <header>
-            <div className="flex justify-between max-w-360 px-33 py-3.75">
+        <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-sm">
+            <div className="flex justify-between items-center max-w-360 px-33 py-3.75 w-full ">
                 <div className="flex items-center gap-2">
                     <Link href="/">
                         {/* <h2 className="font-bold text-3xl">.Logo</h2> */}
@@ -56,13 +56,33 @@ export default function Header() {
                                         {/* <span className="h-5 bg-zinc-300 w-px mr-2 block"></span> */}
                                         <div className="pr-2.5 text-[#BABCC3]"><Search /></div>
                                     </div>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 hover:mt-2 py-2.5"><p>Пестициды </p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <Link href="/catalog?category=pestitsidy">
+                                        <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
+                                            <p>Пестициды </p>
+                                            <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
+                                        </div>
+                                    </Link>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Биопрепараты</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <Link href="/catalog?category=biopreparaty">
+                                        <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
+                                            <p>Биопрепараты</p>
+                                            <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
+                                        </div>
+                                    </Link>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Удобрения</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <Link href="/catalog?category=udobreniia">
+                                        <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
+                                            <p>Удобрения</p>
+                                            <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
+                                        </div>
+                                    </Link>
                                     <span className="w-full bg-zinc-400/50 h-px block"></span>
-                                    <div className=" text-[#7E8290] flex items-center text-[12px] justify-between hover:bg-zinc-300 hover:rounded hover:px-2 py-2.5"><p>Семена</p><IoIosArrowForward className="text-[#4F6B4F]" /></div>
+                                    <Link href="/catalog?category=semena">
+                                        <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
+                                            <p>Семена</p>
+                                            <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
+                                        </div>
+                                    </Link>
                                 </div>
                             </details>
                         </div>
@@ -73,7 +93,7 @@ export default function Header() {
                         <div className="items-center gap-3.75 flex ">
                             <div>
                                 <details className="relative z-10 group">
-                                    <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
+                                    <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1 bg-white">RU
                                         <div className="transition-transform duration-100 group-open:rotate-180">
                                             <IoIosArrowDown />
                                         </div>
@@ -97,8 +117,8 @@ export default function Header() {
                     )}
                     {isBuyer && user && (
                         <div className=" gap-3.75 items-center hidden lg:flex">
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
+                            <button className="text-[18px] bg-white border border-[#4F6B4F] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
+                            <button className="text-[18px] bg-white border border-[#4F6B4F] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
                             <div className="flex gap-3.75">
                                 <div>
                                     <details className="relative z-10 group">
@@ -153,13 +173,13 @@ export default function Header() {
                     )}
 
                     {isSeller && user && (
-                        <div className="flex gap=3.75">
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
-                            <button className="text-[18px] bg-[#EAEBED] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
+                        <div className="flex gap-3.75">
+                            <button className="text-[18px] bg-white border border-[#4F6B4F] p-2 rounded-full" type="button" title="Notificări"><Notification className="text-[#292D32]" /></button>
+                            <button className="text-[18px] bg-white border border-[#4F6B4F] p-2 rounded-full" type="button" title="Coș"><ShopingCart className="text-[#292D32]" /></button>
                             <div className="flex gap-3.75">
                                 <div>
                                     <details className="relative z-10 group">
-                                        <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1">RU
+                                        <summary className="cursor-pointer list-none flex items-center gap-1 text-[#4F6B4F] text-[14px] font-bold border-[#4F6B4F] border-2 rounded-lg px-3 py-1 bg-white">RU
                                             <div className="transition-transform duration-100 group-open:rotate-180">
                                                 <IoIosArrowDown />
                                             </div>

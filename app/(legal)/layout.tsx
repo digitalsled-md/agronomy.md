@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ru">
-            <body className="min-h-full flex flex-col" >
+            <body className="min-h-full" >
                 <div className=" px-4 container max-w-360 mx-auto">
                     <Header />
                     <div className="flex gap-7.5 px-33">

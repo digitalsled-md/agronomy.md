@@ -25,10 +25,10 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${roboto.className} h-full antialiased`}
+      className={`${roboto.className}`}
       suppressHydrationWarning={true}
     >
-      <body className="min-h-full flex flex-col" >
+      <body className="min-h-full" >
         <div className=" px-4 container max-w-360 mx-auto">
           <Header />
           {/* <Breadcrumbs /> */}
