@@ -110,9 +110,15 @@ function CatalogContent() {
                                         )}
                                         <p className="text-[#528731] text-[18px] font-semibold">{product.price_with_discount} MDL</p>
                                     </div>
-                                    <button className="cursor-pointer p-1.5 hover:opacity-80 transition-opacity bg-white rounded-full">
-                                        <AddToCartIcon className='text-[#528731]' />
-                                    </button>
+                                    {product.inStock ? (
+                                        <button className="cursor-pointer p-1.5 hover:opacity-80 transition-opacity bg-white rounded-full">
+                                            <AddToCartIcon className='text-[#528731]' />
+                                        </button>
+                                    ) : (
+                                        <button className="cursor-pointer p-1.5 hover:opacity-80 transition-opacity bg-[#BABCC3] rounded-full">
+                                            <AddToCartIcon className='text-[#528731]' />
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         )
