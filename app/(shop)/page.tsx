@@ -143,60 +143,60 @@ export default function Home() {
             <h2>Категории товаров</h2>
           </div>
           <div className='flex gap-3.75 justify-between w-full mt-3'>
-            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Pesticide} alt={''} priority />
-              <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
-                <Link href="/catalog?category=pestitsidy">
+            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative border border-[#EAEBED]'>
+              <Link href="/catalog?category=pestitsidy">
+                <Image className='w-full object-cover h-full' src={Pesticide} alt={''} priority />
+                <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                   <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                     <h2 className='font-semibold text-[14px] text-[#313440]'>Пестициды</h2>
                     <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
-            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Biopreporat} alt={''} priority />
-              <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
-                <Link href="/catalog?category=biopreparaty">
+            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative border border-[#EAEBED]'>
+              <Link href="/catalog?category=biopreparaty">
+                <Image className='w-full object-cover h-full' src={Biopreporat} alt={''} priority />
+                <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                   <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                     <h2 className='font-semibold text-[14px] text-[#313440]'>Биопрепараты</h2>
                     <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
-            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Udobrenia} alt={''} priority />
-              <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
-                <Link href="/catalog?category=udobreniia">
+            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative border border-[#EAEBED]'>
+              <Link href="/catalog?category=udobreniia">
+                <Image className='w-full object-cover h-full' src={Udobrenia} alt={''} priority />
+                <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                   <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                     <h2 className='font-semibold text-[14px] text-[#313440]'>Удобрения</h2>
                     <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
-            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Semena} alt={''} priority />
-              <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
-                <Link href="/catalog?category=semena">
+            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative border border-[#EAEBED]'>
+              <Link href="/catalog?category=semena">
+                <Image className='w-full object-cover h-full' src={Semena} alt={''} priority />
+                <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                   <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                     <h2 className='font-semibold text-[14px] text-[#313440]'>Семена</h2>
                     <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
-            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative'>
-              <Image className='w-full object-cover h-full' src={Drugoe} alt={''} priority />
-              <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
-                <Link href="/catalog?category=drugoe">
+            <div className='bg-zinc-400 w-55.75 h-54 rounded-lg overflow-hidden relative border border-[#EAEBED]'>
+              <Link href="/catalog?category=drugoe">
+                <Image className='w-full object-cover h-full' src={Drugoe} alt={''} priority />
+                <div className='h-10.25 w-full absolute  bottom-0.75 px-0.75'>
                   <div className='bg-white w-full h-full rounded-lg flex justify-between items-center p-2.5'>
                     <h2 className='font-semibold text-[14px] text-[#313440]'>Другое</h2>
                     <div className='bg-[#4F6B4F] rounded-full text-white h-5.25 w-5.25 flex justify-center items-center pl-0.5'><IoIosArrowForward /></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
           <div className='flex gap-5 justify-between mt-5 mb-5'>

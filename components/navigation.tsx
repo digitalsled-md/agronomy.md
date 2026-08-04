@@ -12,7 +12,7 @@ const NAV_ITEMS = [
 export default function Navigation() {
     const pathname = usePathname();
     return (
-        <aside className="w-80 shrink-0 text-[#313440] border border-[#92AD941A] rounded-lg h-fit overflow-hidden">
+        <aside className="w-80 shrink-0 text-[#313440] border border-[#92AD941A] rounded-lg h-fit overflow-hidden sticky top-20">
             <div className='bg-[#92AD941A] py-2.5 px-3.75'>
                 <h3 className="font-semibold text-[16px] tracking-wide">
                     Навигация

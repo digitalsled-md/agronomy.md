@@ -32,9 +32,8 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-sm">
             <div className="flex justify-between items-center max-w-360 px-33 py-3.75 w-full ">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-5">
                     <Link href="/">
-                        {/* <h2 className="font-bold text-3xl">.Logo</h2> */}
                         <Image src={Logo} alt="logo" />
                     </Link>
                     <button type="button" title="Categorii" onClick={() => { setIsOpen((prev) => !prev); }}>
@@ -50,7 +49,7 @@ export default function Header() {
                                         Каталог товаров
                                     </div>
                                 </summary>
-                                <div className="absolute bg-white border border-[#4F6B4F] rounded-lg p-5 shadow-xl shadow-zinc-500/20 w-100 text-left mt-2">
+                                <div className="absolute bg-white border border-[#4F6B4F] rounded-lg px-2.5 pt-2.5 pb-0.75 shadow-xl shadow-zinc-500/20 w-100 text-left mt-2">
                                     <div className="flex items-center border border-[#BABCC3] rounded-[5px]" onClick={(e) => e.stopPropagation()}>
                                         <input type="text" placeholder="Поиск..." className=" focus:outline-none focus:ring-2 focus:ring-transparent w-full text-[12px] pl-4 py-2.5 placeholder:text-[12px]" />
                                         {/* <span className="h-5 bg-zinc-300 w-px mr-2 block"></span> */}
@@ -80,6 +79,13 @@ export default function Header() {
                                     <Link href="/catalog?category=semena">
                                         <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
                                             <p>Семена</p>
+                                            <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
+                                        </div>
+                                    </Link>
+                                    <span className="w-full bg-zinc-400/50 h-px block"></span>
+                                    <Link href="/catalog?category=drugoe">
+                                        <div className="group text-[#7E8290] flex items-center text-[12px] justify-between hover:text-black hover:font-semibold py-2.5 hover:translate-x-px">
+                                            <p>Другое</p>
                                             <IoIosArrowForward className="text-[#4F6B4F] transition-transform duration-200 group-hover:text-black group-hover:-translate-x-px" />
                                         </div>
                                     </Link>
