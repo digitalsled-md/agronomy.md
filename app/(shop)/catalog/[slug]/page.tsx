@@ -4,6 +4,18 @@ import { use, useEffect, useState } from 'react';
 import api from '@/lib/api';
 import Link from 'next/link';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperClass } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import { ShopingCart, Notification, Arrow } from "@/components/UI-icon/icons"
+
+// import './styles.css';
+
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
 interface ProductDetail {
   id: number;
   name: string;
@@ -30,6 +42,8 @@ export default function ProductDetailPage({
   const [product, setProduct] = useState<ProductDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -78,13 +92,42 @@ export default function ProductDetailPage({
     : 0;
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="bg-[#D9D9D9] rounded-2xl h-96 w-full flex items-center justify-center overflow-hidden">
+    <div className="px-33 pb-7.5 w-full h-screen relative">
+      <div className="flex gap-2.5 w-full justify-between">
+        {/* swiper */}
+        <div className='w-1/2 min-w-0 h-fit flex flex-row-reverse justify-between gap-2.5'>
+          <Swiper
+            spaceBetween={10}
+            navigation={true}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="mySwiper2 flex-1">
+            <SwiperSlide>
+              <div className="bg-[#D9D9D9] rounded-2xl h-96 w-full block overflow-hidden"></div>
+            </SwiperSlide>
+          </Swiper>
+          <Swiper
+            onSwiper={setThumbsSwiper}
+            spaceBetween={10}
+            slidesPerView={4}
+            freeMode={true}
+            watchSlidesProgress={true}
+            direction='vertical'
+            modules={[FreeMode, Navigation, Thumbs]}
+            className="mySwiper w-30"
+          >
+            <SwiperSlide >
+              <div className="bg-[#D9D9D9] rounded-2xl h-full w-30 block items-center justify-center overflow-hidden"></div>
 
+            </SwiperSlide>
+            <SwiperSlide >
+              <div className="bg-[#D9D9D9] rounded-2xl h-full w-30 block items-center justify-center overflow-hidden"></div>
+            </SwiperSlide>
+
+          </Swiper>
         </div>
-
-        <div className="flex flex-col justify-between border-[#EAEBED] border rounded-lg p-5 relative">
+        {/*info block */}
+        <div className="flex flex-col justify-between rounded-lg p-5 relative w-1/2 overflow-hidden">
           <div>
             {/* <div className="text-xs text-[#7E8290] font-medium mb-2 uppercase tracking-wider">
               {product.category?.name} {product.subcategory && `› ${product.subcategory.name}`}
@@ -115,39 +158,48 @@ export default function ProductDetailPage({
               </div>
             )} */}
           </div>
-          <div className="border border-[#BABCC3] py-2.5 px-5 rounded-lg">
-            <div className="flex flex-col mb-6">
+          <div className='flex w-full gap-2.5 items-center'>
+            <div className="flex flex-col shrink-0">
               {hasDiscount && (
-                <span className="text-[11.38px] text-[#A25B40] line-through font-semibold leading-none">
+                <span className="text-[11.38px] text-[#A25B40] line-through font-semibold leading-none whitespace-nowrap">
                   {Number(product.price)} MDL
                 </span>
               )}
-              <span className="text-[18px] font-semibold text-[#528731] leading-none">
+              <span className="text-[18px] font-semibold text-[#528731] leading-none whitespace-nowrap">
                 {product.price_with_discount} MDL
               </span>
 
             </div>
-            <div className="flex items-center gap-4">
-              <p className='text-black text-[16px] font-semibold'>Количество: </p>
-              <div className="flex items-center border border-[#BABCC3] h-fit rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                  className=" p-2.5 h-fit bg-[#D9D9D9] border-r border-r-[#BABCC3] hover:bg-gray-100 text-[#BABCC3] font-bold"
-                >
-                  <p className='rotate-90 leading-none'>{'>'} </p>
-                </button>
-                <span className="p-2.5 font-semibold text-[#313440] leading-none">{quantity}</span>
-                <button
-                  onClick={() => setQuantity((q) => q + 1)}
-                  className="p-2.5 bg-[#D9D9D9] hover:bg-gray-100 text-[#313440] font-bold"
-                >
-                 <p className='-rotate-90 leading-none'>{'>'} </p>
-                </button>
-              </div>
+            <div className="border border-[#EAEBED] p-2.5 rounded-lg w-full flex-1 min-w-0">
+              <div className="flex items-stretch gap-2.5">
+                <div className="flex border border-[#BABCC3] items-stretch rounded-lg overflow-hidden shrink-0">
+                  <button
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    className="w-full h-full p-2.5 bg-[#D9D9D9] hover:bg-gray-100 text-[#BABCC3]"
+                  >
+                    <Arrow />
+                  </button>
 
-              <button className="flex-1 bg-[#4F6B4F] text-white py-1.75 px-3.5 rounded-xl font-bold hover:bg-[#3d543d] transition-colors cursor-pointer">
-                В корзину
-              </button>
+                  <span className="px-2.5 flex justify-center items-center text-[14px] text-[#313440] leading-none"><p>{quantity}</p></span>
+                  <button
+                    onClick={() => setQuantity((q) => q + 1)}
+                    className="p-2.5 bg-[#D9D9D9] hover:bg-gray-100 text-[#313440] font-bold h-full"
+                  >
+                    <Arrow className='transform rotate-180' />
+                  </button>
+                </div>
+                <div className='flex items-center gap-2.5 flex-1 min-w-0'>
+                  <button className="flex-1 bg-[#4F6B4F] text-white text-[12px] font-medium py-2 px-3 rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap h-9">
+                    <ShopingCart className="h-4 w-4 shrink-0" />
+                    <span>Добавить в корзину</span>
+                  </button>
+                  {/* <button className=' py-1.5 px-5.5 w-full whitespace-nowrap border rounded-lg text-[#528731] text-[12px] flex items-center gap-2'><Notification className='w-5 h-5' />Написать продавцу</button> */}
+                  <button className="flex-1 border border-[#528731] text-[#528731] text-[12px] font-medium py-2 px-3 rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap h-9">
+                    <Notification className="w-4 h-4 shrink-0 " />
+                    <span><p>Написать продавцу</p></span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
