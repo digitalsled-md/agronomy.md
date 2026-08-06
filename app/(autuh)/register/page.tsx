@@ -10,6 +10,8 @@ import { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
 import { useSearchParams } from 'next/navigation';
+import { ImCheckmark } from "react-icons/im";
+
 
 type Role = 'buyer' | 'seller';
 
@@ -121,9 +123,20 @@ function RegisterContent() {
                                         <Lock />
                                         <input required type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Пароль' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
                                     </div>
-                                    <div className='bg-white border border-[#BABCC3] py-5 px-3.75 rounded-lg flex items-center gap-2.5'>
-                                        <Lock />
-                                        <input required type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Подтвердите пароль' className='placeholder:text-[14px] placeholder:text-[#313440]/60 text-[14px] text-[#313440] w-full focus:outline-none focus:ring-2 focus:ring-transparent' />
+                                    <div className="flex gap-2 relative mt-2.5 text-start">
+
+                                        <input className=" appearance-none shrink-0 w-5 h-5 
+                                              border border-[#BABCC3]
+                                              rounded-md 
+                                              bg-white
+                                              focus:outline-none 
+                                              flex items-center justify-center 
+                                              cursor-pointer 
+                                              checked:bg-[#528731]
+                                              transition-colors peer relative"  type="checkbox" name='date' value="" id="date" required />
+                                        <ImCheckmark className='pointer-events-none text-white left-0.5 top-0.5 absolute opacity-0 peer-checked:opacity-100' />
+
+                                        <label className="form-check-label text-[#313440] text-[12px]" htmlFor='date'> <p>Я даю согласие на <Link className='text-[#4F6B4F] underline' href="/Privacy">обработку персональных данных</Link> и принимаю <br /><span>условия</span> <Link className='text-[#4F6B4F] underline' href="/Agreement">Пользовательского соглашения</Link></p></label>
                                     </div>
                                 </div>
                                 {/* <div className='flex flex-col gap-2.5'>
